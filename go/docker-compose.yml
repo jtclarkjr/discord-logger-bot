@@ -1,0 +1,16 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        GO_VERSION: "1.24.1" 
+    ports:
+      - "8080:8080"
+    env_file:
+      - .envrc
+    environment:
+      - ENV=production
+      - DISCORD_BOT_TOKEN=${DISCORD_BOT_TOKEN}
+      - COMPOSE_BAKE=true
+    command: ["/usr/local/bin/run-app"]
