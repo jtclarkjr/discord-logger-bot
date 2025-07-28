@@ -47,6 +47,22 @@ Update the configuration file with your server-specific settings:
 - Server event tracking
 - Moderation action logging
 
+## API Endpoints
+
+### Mod Logger Control
+
+You can control the mod logger functionality using HTTP endpoints:
+
+#### Enable Mod Logger
+- **Production**: `POST /bot/mod-logger/on`
+- **Local Development**: `POST localhost:8080/bot/mod-logger/on`
+
+#### Disable Mod Logger
+- **Production**: `POST /bot/mod-logger/off`
+- **Local Development**: `POST localhost:8080/bot/mod-logger/off`
+
+These endpoints allow you to dynamically enable or disable the moderation logging features without restarting the bot.
+
 ## Moderation Usage Only
 
 **This bot is designed exclusively for server moderation purposes and should only be used by:**
